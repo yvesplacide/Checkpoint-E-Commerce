@@ -3,6 +3,11 @@ import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import "./PlaceOrderPage.css";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../slices/cartSlice"; // adapte ce chemin si besoin
+
+
+
 
 const PlaceOrderPage = () => {
   const navigate = useNavigate();
@@ -10,6 +15,14 @@ const PlaceOrderPage = () => {
   const userInfo = useSelector((state) => state.user?.userInfo);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
+const cancelOrderHandler = () => {
+  if (window.confirm("Êtes-vous sûr de vouloir annuler cette commande ?")) {
+    dispatch(clearCart());
+    navigate("/");
+  }
+};
 
   if (!userInfo) {
     return <Navigate to="/login" state={{ from: "/placeorder" }} />;
@@ -129,6 +142,13 @@ const PlaceOrderPage = () => {
           >
             {loading ? "Traitement en cours..." : "Passer la commande"}
           </button>
+          <button 
+           onClick={cancelOrderHandler}
+            className="cancel-order-btn"
+           > 
+          Annuler la commande
+          </button>
+
         </div>
       </div>
     </div>
