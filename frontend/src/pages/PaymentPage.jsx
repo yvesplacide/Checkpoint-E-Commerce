@@ -314,7 +314,7 @@ const PaymentPage = () => {
 
               <button
                 type="button"
-                onClick={() => navigate(`/order/${order._id}`)}
+                onClick={() => navigate("/placeorder")}
                 className="back-button"
               >
                 Retour à la commande

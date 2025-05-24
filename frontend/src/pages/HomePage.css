@@ -14,7 +14,7 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  background: linear-gradient(to right, #094abb, #7da6ec);
   color: white;
   text-align: center;
   padding: 5rem 2rem;
@@ -47,11 +47,12 @@
 
 .hero-btn.primary {
   background-color: white;
-  color: #3b82f6;
+  color: #0857d5;
 }
 
 .hero-btn.primary:hover {
-  background-color: #dbeafe;
+  background-color: #84b5d3;
+  color: white;
 }
 
 .hero-btn.secondary {
@@ -61,7 +62,7 @@
 }
 
 .hero-btn.secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(77, 71, 160, 0.2);
 }
 
 /* Features Section */
