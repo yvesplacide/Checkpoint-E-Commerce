@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
+import './PaymentConfirmationPage.css';
 
 const PaymentConfirmationPage = () => {
-  const { orderId } = useParams();
   const navigate = useNavigate();
+  const { orderId } = useParams();
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const userInfo = useSelector((state) => state.user?.userInfo);
 
   useEffect(() => {
@@ -22,80 +24,79 @@ const PaymentConfirmationPage = () => {
         setLoading(false);
       } catch (error) {
         console.error("Erreur lors de la récupération de la commande :", error);
+        setError("Impossible de charger les détails de la commande");
         setLoading(false);
       }
     };
 
-    if (orderId) {
+    if (orderId && userInfo) {
       fetchOrder();
+    } else {
+      setError("Vous devez être connecté pour voir les détails de la commande");
+      setLoading(false);
     }
   }, [orderId, userInfo]);
 
   if (loading) {
-    return <div className="text-center p-5">Chargement...</div>;
+    return (
+      <div className="loading-spinner">
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
-  if (!order) {
-    return <div className="text-center p-5">Commande non trouvée</div>;
+  if (error) {
+    return (
+      <div className="confirmation-container">
+        <div className="confirmation-card">
+          <div className="confirmation-content">
+            <div className="error-message">{error}</div>
+            <div className="button-group">
+              <Link to="/orders" className="primary-button">
+                Voir mes commandes
+              </Link>
+              <button
+                onClick={() => navigate('/')}
+                className="secondary-button"
+              >
+                Retour à l'accueil
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="container py-5">
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <div className="card shadow">
-            <div className="card-body text-center">
-              <div className="mb-4">
-                <i className="fas fa-check-circle text-success" style={{ fontSize: "4rem" }}></i>
-              </div>
-              <h2 className="card-title mb-4">Paiement Confirmé !</h2>
-              <p className="lead">Merci pour votre commande</p>
-              <p>Votre numéro de commande est : #{order._id}</p>
-              
-              <div className="mt-4">
-                <h4>Détails de la commande :</h4>
-                <div className="text-start">
-                  <p><strong>Adresse de livraison :</strong></p>
-                  <p>{order.shippingAddress.address}</p>
-                  <p>{order.shippingAddress.city}, {order.shippingAddress.postalCode}</p>
-                  <p>{order.shippingAddress.country}</p>
-                </div>
-
-                <div className="mt-4">
-                  <h4>Articles commandés :</h4>
-                  <ul className="list-unstyled">
-                    {order.orderItems.map((item) => (
-                      <li key={item.product} className="mb-2">
-                        {item.name} x {item.qty} = {(item.price * item.qty).toFixed(2)} €
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-4">
-                  <h4>Résumé :</h4>
-                  <p>Sous-total : {order.itemsPrice} €</p>
-                  <p>Livraison : {order.shippingPrice} €</p>
-                  <p>TVA : {order.taxPrice} €</p>
-                  <p className="fw-bold">Total : {order.totalPrice} €</p>
-                </div>
-              </div>
-
-              <div className="mt-5">
-                <button
-                  onClick={() => navigate('/')}
-                  className="btn btn-primary me-2"
-                >
-                  Retour à l'accueil
-                </button>
-                <button
-                  onClick={() => navigate(`/order/${order._id}`)}
-                  className="btn btn-outline-primary"
-                >
-                  Voir les détails de la commande
-                </button>
-              </div>
+    <div className="confirmation-container">
+      <div className="confirmation-card">
+        <div className="confirmation-content">
+          <div className="success-icon">✓</div>
+          <h1 className="confirmation-title">Paiement confirmé !</h1>
+          <p className="confirmation-message">
+            Votre commande #{order._id} a été confirmée avec succès.
+          </p>
+          
+          <div className="order-summary">
+            <h2>Récapitulatif de la commande</h2>
+            <div className="order-details">
+              <p><strong>Date :</strong> {new Date(order.createdAt).toLocaleDateString()}</p>
+              <p><strong>Total :</strong> {order.totalPrice} €</p>
+              <p><strong>Statut :</strong> {order.isPaid ? "Payée" : "En attente de paiement"}</p>
             </div>
+          </div>
+
+          <div className="button-group">
+            <Link to="/orders" className="primary-button">
+              Voir toutes mes commandes
+            </Link>
+            <button
+              onClick={() => navigate('/')}
+              className="secondary-button"
+            >
+              Continuer mes achats
+            </button>
           </div>
         </div>
       </div>

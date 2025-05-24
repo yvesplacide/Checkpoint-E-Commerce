@@ -3,6 +3,7 @@ import { removeFromCart, updateCartItemQuantity } from "../slices/cartSlice";
 // import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./CartPage.css";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const CartPage = () => {
 
   const { cartItems } = useSelector((state) => state.cart);
   // Temporairement commenté jusqu'à ce que l'authentification soit implémentée
-  // const { userInfo } = useSelector((state) => state.user);
+   const { userInfo } = useSelector((state) => state.user);
 
   const removeItem = (id) => {
     dispatch(removeFromCart(id));

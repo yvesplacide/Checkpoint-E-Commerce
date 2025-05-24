@@ -11,6 +11,7 @@ import PlaceOrderPage from "./pages/PlaceOrderPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import PaymentPage from './pages/PaymentPage';
 import PaymentConfirmationPage from './pages/PaymentConfirmationPage';
+import OrderPage from './pages/OrderPage';
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "./slices/userSlice";
 import { useEffect } from "react";
@@ -41,6 +42,7 @@ function App() {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/placeorder" element={<PlaceOrderPage />} />
               <Route path="/order/:id" element={<OrderDetailsPage />} />
+              <Route path="/orders" element={<OrderPage />} />
               <Route path="/payment/:orderId" element={<PaymentPage />} />
               <Route path="/payment-confirmation/:orderId" element={<PaymentConfirmationPage />} />
             </Routes>

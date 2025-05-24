@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import "./PlaceOrderPage.css";
 
 const PlaceOrderPage = () => {
   const navigate = useNavigate();
@@ -69,37 +70,66 @@ const PlaceOrderPage = () => {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Valider la commande</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      
-      <div>
-        <h3>Récapitulatif de votre commande</h3>
-        {cartItems.map((item) => (
-          <div key={item._id} style={{ marginBottom: "10px" }}>
-            {item.title} x {item.qty} = {item.price * item.qty} €
+    <div className="place-order-container">
+      <div className="place-order-header">
+        <h1 className="place-order-title">Valider la commande</h1>
+        <p className="place-order-subtitle">Vérifiez les détails de votre commande avant de la confirmer</p>
+      </div>
+
+      {error && <div className="error-message">{error}</div>}
+
+      <div className="place-order-grid">
+        <div className="order-details-card">
+          <div className="order-details-header">
+            <h2 className="order-details-title">Détails de la commande</h2>
           </div>
-        ))}
-        <hr />
-        <p>Sous-total : {itemsPrice} €</p>
-        <p>Livraison : {shippingPrice} €</p>
-        <p>TVA : {taxPrice} €</p>
-        <h3>Total : {totalPrice} €</h3>
-        <button 
-          onClick={placeOrderHandler} 
-          disabled={loading}
-          style={{ 
-            padding: "10px 20px", 
-            fontSize: "1.1em",
-            backgroundColor: loading ? "#ccc" : "#007bff",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: loading ? "not-allowed" : "pointer"
-          }}
-        >
-          {loading ? "Traitement en cours..." : "Passer la commande"}
-        </button>
+          <div className="order-details-section">
+            <h3 className="section-title">Articles</h3>
+            <div className="section-content">
+              {cartItems.map((item) => (
+                <div key={item._id} className="order-item">
+                  <img src={item.image} alt={item.name} className="item-image" />
+                  <div className="item-details">
+                    <span className="item-name">{item.title}</span>
+                    <span className="item-quantity">Quantité: {item.qty}</span>
+                  </div>
+                  <span className="item-price">{(item.price * item.qty).toFixed(2)} €</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="order-summary-card">
+          <div className="order-summary-header">
+            <h2 className="order-summary-title">Récapitulatif</h2>
+          </div>
+          <div className="order-total">
+            <div className="total-row">
+              <span>Sous-total</span>
+              <span>{itemsPrice.toFixed(2)} €</span>
+            </div>
+            <div className="total-row">
+              <span>Livraison</span>
+              <span>{shippingPrice.toFixed(2)} €</span>
+            </div>
+            <div className="total-row">
+              <span>TVA</span>
+              <span>{taxPrice.toFixed(2)} €</span>
+            </div>
+            <div className="total-row">
+              <span>Total</span>
+              <span>{totalPrice} €</span>
+            </div>
+          </div>
+          <button 
+            onClick={placeOrderHandler} 
+            disabled={loading}
+            className="place-order-btn"
+          >
+            {loading ? "Traitement en cours..." : "Passer la commande"}
+          </button>
+        </div>
       </div>
     </div>
   );

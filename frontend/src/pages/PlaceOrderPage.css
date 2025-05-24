@@ -1,0 +1,238 @@
+.place-order-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.place-order-header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.place-order-title {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.place-order-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+
+.place-order-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.order-details-card {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+}
+
+.order-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.order-details-title {
+  font-size: 1.25rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.order-details-edit {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.order-details-edit:hover {
+  text-decoration: underline;
+}
+
+.order-details-section {
+  margin-bottom: 1.5rem;
+}
+
+.order-details-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--text-light);
+}
+
+.section-content {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+.section-row.total {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--text-light);
+}
+
+.order-summary-card {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+  height: fit-content;
+}
+
+.order-summary-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.order-summary-title {
+  font-size: 1.25rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.order-items {
+  margin-bottom: 1.5rem;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 0.875rem;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.item-price {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.item-quantity {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-normal);
+}
+
+.place-order-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.place-order-btn:disabled {
+  background-color: var(--text-light);
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .place-order-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .order-summary-card {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .place-order-container {
+    padding: var(--spacing-lg);
+  }
+
+  .place-order-title {
+    font-size: 1.75rem;
+  }
+
+  .place-order-subtitle {
+    font-size: 1rem;
+  }
+
+  .order-details-card,
+  .order-summary-card {
+    padding: var(--spacing-lg);
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .place-order-container {
+    padding: var(--spacing-md);
+  }
+
+  .order-details-card,
+  .order-summary-card {
+    padding: var(--spacing-md);
+  }
+
+  .section-row {
+    font-size: 0.875rem;
+  }
+
+  .section-row.total {
+    font-size: 1.125rem;
+  }
+} 
