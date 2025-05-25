@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* Section Hero */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Bienvenue sur BOULEVARD</h1>
+          <h1 className="hero-title">Bienvenue sur LE BOULEVARD</h1>
           <p className="hero-subtitle">
             Découvrez notre sélection de produits de qualité à des prix compétitifs
           </p>

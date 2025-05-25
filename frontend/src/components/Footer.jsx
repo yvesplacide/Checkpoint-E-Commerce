@@ -25,15 +25,15 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-title">Contact</h3>
             <ul className="footer-links">
-              <li>Email: contact@mon-ecommerce.com</li>
-              <li>Tél: +33 1 23 45 67 89</li>
+              <li>Email: leboulevard@gmail.com</li>
+              <li>Tél: 0779545834</li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
           <p className="copyright">
-            © {new Date().getFullYear()} Mon E-commerce. Tous droits réservés.
+            © {new Date().getFullYear()} Le BOULEVARD, ta boutique en ligne. Tous droits réservés.
           </p>
         </div>
       </div>

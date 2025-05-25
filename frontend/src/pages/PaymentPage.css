@@ -1,6 +1,7 @@
 .payment-container {
   min-height: 100vh;
-  background-color: #f3f4f6;
+    background: linear-gradient(to right, #094abb, #7da6ec);
+
   padding: 3rem 1rem;
 }
 

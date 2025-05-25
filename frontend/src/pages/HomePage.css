@@ -68,7 +68,7 @@
 /* Features Section */
 .features-section {
   padding: 4rem 2rem;
-  background-color: #f9fafb;
+  background: linear-gradient(to right, #094abb, #7da6ec);
   text-align: center;
 }
 
@@ -160,7 +160,7 @@
 /* Products Section */
 #products {
   padding: 4rem 2rem;
-  background-color: #f3f4f6;
+  background-color: #d2def5;
 }
 
 /* Loading Spinner */
