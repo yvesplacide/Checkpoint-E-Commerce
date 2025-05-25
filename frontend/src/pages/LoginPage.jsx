@@ -105,6 +105,12 @@ const LoginPage = () => {
           >
             {loading ? "Connexion..." : "Se connecter"}
           </button>
+          <p className="text-center mt-3">
+            Pas encore de compte ?{" "}
+            <a href="/register" style={{ color: "#2563eb", fontWeight: 600 }}>
+             S'inscrire
+            </a>
+            </p>
         </form>
       </div>
     </div>

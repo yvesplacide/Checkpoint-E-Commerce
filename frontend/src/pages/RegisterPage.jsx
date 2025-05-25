@@ -160,6 +160,12 @@ const RegisterPage = () => {
           >
             {loading ? "Inscription..." : "S'inscrire"}
           </button>
+          <p className="text-center mt-3">
+           Déjà un compte ?{" "}
+          <a href="/login" style={{ color: "#2563eb", fontWeight: 600 }}>
+             Se connecter
+            </a>
+            </p>
         </form>
       </div>
     </div>

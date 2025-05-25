@@ -26,7 +26,9 @@ export const addOrderItems = async (req, res) => {
     itemsPrice,
     shippingPrice,
     taxPrice,
-    totalPrice
+    totalPrice,
+    isPaid: false,      // Ajouté : la commande n'est pas payée à la création
+    paidAt: null
   });
 
   const createdOrder = await order.save();
