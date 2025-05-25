@@ -49,7 +49,7 @@ Une application e-commerce complète construite avec la stack MERN (MongoDB, Exp
 - React Router
 - Axios
 - Stripe.js
-- Tailwind CSS
+- CSS
 
 ### Backend
 
