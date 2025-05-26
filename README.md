@@ -4,7 +4,7 @@ Une application e-commerce complète construite avec la stack MERN (MongoDB, Exp
 
 ## Lien deployer
 
-lien : ```polite-empanada-8fd1a9.netlify.app```
+- [lien](polite-empanada-8fd1a9.netlify.app)
 
 ## 🚀 Fonctionnalités
 
