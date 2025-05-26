@@ -28,47 +28,13 @@ const CartPage = () => {
 
   const handleOrder = async () => {
     try {
-      // Temporairement commenté jusqu'à ce que l'authentification soit implémentée
-      /*
-      if (!userInfo) {
-        setError("Veuillez vous connecter pour passer une commande");
-        setTimeout(() => navigate("/login"), 2000);
-        return;
-      }
-      */
 
       if (cartItems.length === 0) {
         setError("Votre panier est vide");
         return;
       }
 
-      // Temporairement commenté jusqu'à ce que le backend soit prêt
-      /*
-      const order = {
-        orderItems: cartItems,
-        shippingAddress: {
-          address: "123 rue de Paris",
-          city: "Paris",
-          postalCode: "75000",
-          country: "France"
-        },
-        paymentMethod: "PayPal",
-        itemsPrice: getTotal(),
-        shippingPrice: 5,
-        taxPrice: 2,
-        totalPrice: parseFloat(getTotal()) + 5 + 2
-      };
-
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userInfo.token}`
-        }
-      };
-
-      const { data } = await axios.post("/api/orders", order, config);
-      navigate(`/order/${data._id}`);
-      */
+     
 
       // Redirection temporaire vers la page de commande
       navigate("/placeorder");

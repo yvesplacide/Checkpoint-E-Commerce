@@ -16,7 +16,7 @@ const OrderDetailsPage = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/orders/${id}`, {
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/${id}`, {
           headers: {
             Authorization: `Bearer ${userInfo.token}`,
           },
@@ -41,7 +41,7 @@ const OrderDetailsPage = () => {
 
       // Créer d'abord le paiement
       const { data: paymentData } = await axios.post(
-        "http://localhost:5000/api/payments",
+        `${import.meta.env.VITE_API_URL}/api/payments`,
         {
           orderId: order._id,
           amount: order.totalPrice,
@@ -56,7 +56,7 @@ const OrderDetailsPage = () => {
 
       // Mettre à jour le statut de la commande
       const { data: updatedOrder } = await axios.put(
-        `http://localhost:5000/api/orders/${id}/pay`,
+        `${import.meta.env.VITE_API_URL}/api/orders/${id}/pay`,
         {
           paymentId: paymentData._id,
           status: "pending"

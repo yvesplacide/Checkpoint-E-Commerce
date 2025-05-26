@@ -19,7 +19,7 @@ const OrderPage = () => {
         throw new Error("Vous devez être connecté pour voir vos commandes");
       }
 
-      const { data } = await axios.get("http://localhost:5000/api/orders/myorders", {
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/myorders`, {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
         },

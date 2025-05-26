@@ -15,7 +15,7 @@ const PaymentConfirmationPage = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/orders/${orderId}`, {
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}`, {
           headers: {
             Authorization: `Bearer ${userInfo.token}`,
           },

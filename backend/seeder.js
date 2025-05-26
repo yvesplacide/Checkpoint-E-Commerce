@@ -11,7 +11,7 @@ connectDB();
 const products = [
   {
     title: "Casque Bluetooth TechTok",
-    image: "http://localhost:5000/images/casque_TechTok.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/casque_TechTok.png",
     description: "Audio sans fil de haute qualité avec confort optimal.",
     category: "Audio",
     price: 99.99,
@@ -19,7 +19,7 @@ const products = [
 },
   {
     title: "Casque Bleutooth",
-    image: "http://localhost:5000/images/casque_orange.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/casque_orange.png",
     description: "Casque audio sans fil avec son de haute qualité.",
     category: "audio",
     price: 79.99,
@@ -27,7 +27,7 @@ const products = [
   },
   {
     title: "Television HD",
-    image: "http://localhost:5000/images/Television.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/Television.png",
     description: "Écran haute définition offrant une image claire et nette.",
     category: "Ecran",
     price: 659.99,
@@ -35,7 +35,7 @@ const products = [
 },
 {
     title: "Iphone 14 Pro",
-    image: "http://localhost:5000/images/iphone14pro.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/iphone14pro.png",
     description: "Smartphone haut de gamme avec écran Super Retina XDR.",
     category: "Telephone",
     price: 439.99,
@@ -43,7 +43,7 @@ const products = [
 },
 {
     title: "Macbook Pro ",
-    image: "http://localhost:5000/images/makbook_pro.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/makbook_pro.png",
     description: "Ordinateur portable hautes performances avec écran Retina.",
     category: "ordinateur",
     price: 99.99,
@@ -51,7 +51,7 @@ const products = [
 },
  {
     title: "Casque Bluetooth Blanc",
-    image: "http://localhost:5000/images/casqueblanc.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/casqueblanc.png",
     description: "Audio sans fil de haute qualité avec confort optimal.",
     category: "Audio",
     price: 99.99,
@@ -59,7 +59,7 @@ const products = [
 },
  {
     title: "Casque Bluetooth Gris",
-    image: "http://localhost:5000/images/casquegray.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/casquegray.png",
     description: "Audio sans fil de haute qualité avec confort optimal.",
     category: "Audio",
     price: 89.99,
@@ -67,7 +67,7 @@ const products = [
 },
  {
     title: "Redmi C65",
-    image: "http://localhost:5000/images/RedmiC65.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/RedmiC65.png",
     description: "Smartphone abordable avec grand écran, batterie longue durée et performante.",
     category: "Telephone",
     price: 399.99,
@@ -75,7 +75,7 @@ const products = [
 },
 {
     title: "Montre Rolex",
-    image: "http://localhost:5000/images/montre_rolex.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/montre_rolex.png",
     description: "Montre de luxe emblématique alliant précision suisse.",
     category: "montre",
     price: 796.99,
@@ -83,7 +83,7 @@ const products = [
 },
   {
     title: "Montre Omega",
-    image: "http://localhost:5000/images/montreOmega.png",
+    image: "https://cheickpoint-ecommerce-backend-1.onrender.com/images/montreOmega.png",
     description: "Montre de prestige alliant innovation horlogère, design sophistiqué.",
     category: "montre",
     price: 249.99,

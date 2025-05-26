@@ -33,7 +33,7 @@ const PaymentPage = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/orders/${orderId}`, {
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}`, {
           headers: {
             Authorization: `Bearer ${userInfo.token}`,
           },
@@ -92,7 +92,7 @@ const PaymentPage = () => {
       }
 
       const { data } = await axios.post(
-        'http://localhost:5000/api/payments',
+        `${import.meta.env.VITE_API_URL}/api/payments`,
         {
           orderId: order._id,
           paymentMethod: 'Carte de crédit',

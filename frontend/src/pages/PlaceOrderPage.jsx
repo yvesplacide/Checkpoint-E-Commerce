@@ -52,7 +52,7 @@ const cancelOrderHandler = () => {
       setError("");
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/orders",
+        `${import.meta.env.VITE_API_URL}/api/orders`,
         {
           orderItems: cartItems.map((item) => ({
             name: item.title,
