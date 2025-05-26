@@ -2,6 +2,10 @@
 
 Une application e-commerce complète construite avec la stack MERN (MongoDB, Express.js, React.js, Node.js) avec intégration de paiement Stripe.
 
+## Lien deployer
+
+lien : `polite-empanada-8fd1a9.netlify.app`
+
 ## 🚀 Fonctionnalités
 
 ### Frontend
